@@ -1,5 +1,5 @@
 {% set name = "caf.distribute" %}
-{% set version = "0.4.2" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/caf_distribute-{{ version }}.tar.gz
-  sha256: e257265ac2554957c493d5dc0e1eceacecef47d8a4060255062f13a6bf88247b
+  sha256: 6090870801bd388e91909be9061531a4882cf6a0b80f162b404905b9d13a5de7
 
 build:
   noarch: python
