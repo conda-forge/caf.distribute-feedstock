@@ -1,5 +1,6 @@
 {% set name = "caf.distribute" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
+{% set python_min = 3.11 %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/caf_distribute-{{ version }}.tar.gz
-  sha256: e8310b67471f4082815d4846ec2f6e248eb81f8cd526837f755f95811c9bfca9
+  sha256: 8a844eeeb900d1aef16aa987c476d0241c218a8c975fe8359be9b77d2869849b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -22,12 +23,13 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - numpy >=1.22.0,<2.1.0
-    - pandas >=1.4.0
-    - scipy >=1.10.1
+    - numpy >=2.2
+    - scipy >=1.14
+    - pandas >=2
     - tqdm >=4.50.2
-    - caf.toolkit >=0.7.4
+    - caf.toolkit >=0.11
     - matplotlib-base >=3.8.2
+    - xarray >=2024
 
 test:
   imports:
